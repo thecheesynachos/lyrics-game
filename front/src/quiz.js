@@ -225,7 +225,7 @@ class TopBar extends React.Component {
                     <Row>
                         <div style={{textAlign: 'left'}}>
                             Band: {this.props.band} <br/>
-                            Current score: {this.props.score} out of {this.props.curr} <br/>
+                            Current score: {this.props.score} out of {this.props.ans} <br/>
                             Question: {this.props.curr} of {this.props.tot}
                         </div>
                     </Row>
@@ -249,7 +249,7 @@ export class Quiz extends React.Component {
             started: false,
             pressed: false,
             questions: [],
-            qnum: 0,
+            qnum: 1,
             qans: 0,
             tot: 5,
             corrects: 0,
@@ -280,7 +280,7 @@ export class Quiz extends React.Component {
                     pressed: false,
                     started: true,
                     questions: response.questions,
-                    qnum: 0,
+                    qnum: 1,
                     qans: 0,
                     tot: response.count,
                     corrects: 0
@@ -297,7 +297,7 @@ export class Quiz extends React.Component {
     }
 
     confirmAction() {
-        let isCorrect = this.state.choice === this.state.questions[this.state.qnum].correct;
+        let isCorrect = this.state.choice === this.state.questions[this.state.qans].correct;
         this.setState({
             confirmed: true,
             lastCorrect: isCorrect,
@@ -307,11 +307,11 @@ export class Quiz extends React.Component {
     }
 
     continueAction() {
-        let gameEnd = this.state.qnum + 1 === this.state.tot;
+        let gameEnd = this.state.qans === this.state.tot;
         this.setState({
             choice: '',
             gameFinished: gameEnd,
-            qnum: this.state.qnum + 1,
+            qnum: this.state.qnum + (!gameEnd),
             selected: false,
             confirmed: false,
         });
@@ -319,7 +319,7 @@ export class Quiz extends React.Component {
 
     render() {
 
-        let i = this.state.qnum;
+        let i = this.state.qans;
         let scr = '';
 
         if (this.state.started) {
@@ -336,9 +336,9 @@ export class Quiz extends React.Component {
                 scr = (
                     <AnswerScreen
                         isCorrect={this.state.lastCorrect}
-                        lyrics={this.state.questions[i].lyrics}
+                        lyrics={this.state.questions[i-1].lyrics}
                         plaOption={this.state.choice}
-                        corOption={this.state.questions[i].correct}
+                        corOption={this.state.questions[i-1].correct}
                         continueAction={() => this.continueAction()}
                     />
                 );
@@ -367,7 +367,8 @@ export class Quiz extends React.Component {
             <TopBar
                 band={this.state.band}
                 score={this.state.corrects}
-                curr={this.state.qans}
+                curr={this.state.qnum}
+                ans={this.state.qans}
                 tot={this.state.tot}
             />
         );
