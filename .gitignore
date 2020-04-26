@@ -1,0 +1,9 @@
+.ipynb_checkpoints
+*.ipynb
+*/node_modules
+*cache
+*__pycache__
+*.DS_Store
+.idea/
+*yarn.lock
+*package.lock

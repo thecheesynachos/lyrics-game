@@ -1,0 +1,203 @@
+/*
+
+Comparto TemplateMo
+
+https://templatemo.com/tm-544-comparto
+
+
+Color Codes
+------------
+Purple: #9999CC
+Pink: #CC9999
+Grey: #666666
+Sky Blue: #99CCFF
+Green: #99CC99
+Light Grey: #F2F2F2
+Text Color: #666
+
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+ul, h1, h2, h3, h4, p, figure {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    overflow-x: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+p {
+    color: #666;
+    line-height: 1.2;
+    margin-bottom: 35px;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+.container-fluid {
+    max-width: 1210px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 100vh;
+}
+
+.quiz-screen-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: cyan;
+    width: 70vw;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.banner_container {
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    width: 70vw;
+    height: 10vh;
+    color: black;
+    background-color: lightskyblue;
+    padding: 2%;
+}
+
+.quiz-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 70vw;
+    height: 75vh;
+    background-color: cyan;
+    padding: 5%;
+}
+
+.letterbar-container {
+    height: 15vh;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 70vw;
+    font-size: 25px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    color: black;
+    background-color: lightcyan;
+    padding: 2%;
+}
+
+.artists-container {
+    height: 60vh;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    color: black;
+    background-color: lightskyblue;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+/* https://codepen.io/matthewcain/pen/ZepbeR */
+.button, .selected_button, .confirm_button {
+    padding-top: 1px;
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: 8vh;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 1;
+    z-index: 1000;
+    font-family: "Comic Sans MS", Geneva, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+.button:active {
+    background-color: #555;
+}
+
+.button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button {
+    color: #fff;
+    background-color: #000;
+}
+
+.selected_button {
+    color: #000;
+    background-color: #ddd;
+}
+
+.confirm_button {
+    color: #fff;
+    background-color: blueviolet;
+}
+
+.invisible_button {
+    padding-top: 1px;
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: 8vh;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 1000;
+    font-family: "Comic Sans MS", Geneva, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    opacity: 0;
+}
+
+.answer_text {
+    white-space: pre-wrap;
+}
