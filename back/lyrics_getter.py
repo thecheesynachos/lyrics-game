@@ -10,11 +10,11 @@ def generate_one_sample(artist, songs_list, songs_link, ln=2, n=4):
         options = [songs_list[i] for i in choices]
     ans = songs_list[choices[0]]
     lyrics_cut = ans
+    lyrics = get_lyrics(artist, songs_link[choices[0]])
     while ans.lower() in lyrics_cut.lower():
-        lyrics = get_lyrics(artist, songs_link[choices[0]])
         ln_num = random.randint(0, len(lyrics) - ln)
         lyrics_cut = ' // '.join(lyrics[ln_num:ln_num+ln])
-    random.shuffle(choices)
+    random.shuffle(options)
     return {
         'lyrics': lyrics_cut,
         'options': options,
