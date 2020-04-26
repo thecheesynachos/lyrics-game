@@ -1,4 +1,4 @@
-#Lyrics Game
+# Lyrics Game
 
 Simple game where you choose the song a certain lyric 
 is from. Allows user to select artist they want 
